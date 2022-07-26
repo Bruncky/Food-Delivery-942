@@ -6,6 +6,8 @@ Style/StringLiterals:
   Enabled: false
 Layout/LineLength:
   Max: 120
+Lint/MissingSuper:
+  Enabled: false
 Lint/UnusedMethodArgument:
   Enabled: false
 Layout/EmptyLines:
@@ -31,8 +33,6 @@ Style/MutableConstant:
 Style/SignalException:
   Enabled: false
 Metrics/CyclomaticComplexity:
-  Enabled: false
-Style/MethodMissingSuper:
   Enabled: false
 Style/MissingRespondToMissing:
   Enabled: false

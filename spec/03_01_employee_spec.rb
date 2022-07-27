@@ -61,14 +61,14 @@ describe "Employee", :employee do
       expect(employee.manager?).to be true
     end
 
-    it "should return false if the employee is a delivery guy" do
+    it "should return false if the employee is a rider" do
       employee = Employee.new({ role: "rider" })
       expect(employee.manager?).to be false
     end
   end
 
   describe "#rider?" do
-    it "should return true if the employee is a delivery guy" do
+    it "should return true if the employee is a rider" do
       employee = Employee.new({ role: "rider" })
       expect(employee.rider?).to be true
     end

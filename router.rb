@@ -12,7 +12,7 @@ class Router
 
     while @running
       # Check employee's role
-      # Print manager menu OR driver menu
+      # Print manager menu OR rider menu
       if employee.manager?
         print_manager_menu
 
@@ -21,12 +21,12 @@ class Router
 
         route_manager_action(choice)
       else
-        print_driver_menu
+        print_rider_menu
 
         choice = gets.chomp.to_i
         print `clear`
 
-        route_driver_action(choice)
+        route_rider_action(choice)
       end
     end
   end
@@ -45,7 +45,7 @@ class Router
     print "> "
   end
 
-  def print_driver_menu
+  def print_rider_menu
     puts "--------------------"
     puts "------- MENU -------"
     puts "--------------------"
@@ -66,7 +66,7 @@ class Router
     end
   end
 
-  def route_driver_action(choice)
+  def route_rider_action(choice)
     case choice
     when 1 then @meals_controller.list
     when 2 then @customers_controller.list

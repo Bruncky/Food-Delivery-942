@@ -5,14 +5,14 @@ class Employee
     @id = attributes[:id]
     @username = attributes[:username]
     @password = attributes[:password]
-    @role = attributes[:role]    # manager or driver
+    @role = attributes[:role]    # manager or rider
   end
 
   def manager?
     @role == 'manager'
   end
 
-  def driver?
-    @role == 'driver'
+  def rider?
+    @role == 'rider'
   end
 end

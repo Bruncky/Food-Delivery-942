@@ -13,7 +13,7 @@ class SessionsController
     password = @employees_view.ask_user_for(:password)
     # 3. Find the employee by username
     employee = @employee_repository.find_by_username(username)
-    
+
     # 4. Check if username and password match
     if employee && employee.password == password
       # 4a. Display welcome message

@@ -36,10 +36,11 @@ class OrdersController
     order_id = @orders_view.ask_user_for(:order)
     my_orders = @order_repository.my_undelivered_orders(current_user)
     
-    order = my_orders[order_id.to_i]
+    order = my_orders.find { |order| order.id == order_id.to_i }
 
-    order.deliver!
-    # @order_repository.mark_as_delivered(order)
+    # Here, instead of delivering directly, we need to let the
+    # repo handle that, so that we can save the info to the CSV
+    @order_repository.mark_as_delivered(order)
   end
 
   private

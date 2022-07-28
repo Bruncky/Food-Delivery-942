@@ -34,9 +34,11 @@ class OrderRepository
     undelivered_orders.reject { |order| order.employee.username != current_user.username }
   end
 
-  # def mark_as_delivered(order)
-  #   order.deliver!
-  # end
+  def mark_as_delivered(order)
+    order.deliver!
+
+    save_csv
+  end
 
   private
 

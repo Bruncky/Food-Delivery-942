@@ -7,14 +7,14 @@ class OrdersView
   end
 
   def display_meals(meals)
-    meals.each_with_index do |meal, index|
-      puts "#{index + 1} - #{meal.name}"
+    meals.each do |meal|
+      puts "#{meal.id} - #{meal.name}"
     end
   end
 
   def display_customers(customers)
-    customers.each_with_index do |customer, index|
-      puts "#{index + 1} - #{customer.name}"
+    customers.each do |customer, index|
+      puts "#{customer.id} - #{customer.name}"
     end
   end
 
@@ -28,8 +28,8 @@ class OrdersView
   end
 
   def display_undelivered(orders)
-    orders.each_with_index do |order, index|
-      puts "#{index + 1} - Meal: #{order.meal.name} | Customer: #{order.customer.name} | Delivered by: #{order.employee.username} | Delivered: #{order.delivered?}"
+    orders.each do |order, index|
+      puts "#{order.id} - Meal: #{order.meal.name} | Customer: #{order.customer.name} | Delivered by: #{order.employee.username} | Delivered: #{order.delivered?}"
     end
   end
 end

@@ -6,6 +6,10 @@ require_relative 'app/controllers/customers_controller'
 
 require_relative 'app/repositories/employee_repository'
 require_relative 'app/controllers/sessions_controller'
+
+require_relative 'app/repositories/order_repository'
+require_relative 'app/controllers/orders_controller'
+
 require_relative 'router'
 
 

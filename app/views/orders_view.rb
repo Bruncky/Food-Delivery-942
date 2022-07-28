@@ -13,7 +13,7 @@ class OrdersView
   end
 
   def display_customers(customers)
-    customers.each do |customer, index|
+    customers.each do |customer|
       puts "#{customer.id} - #{customer.name}"
     end
   end
@@ -28,8 +28,15 @@ class OrdersView
   end
 
   def display_undelivered(orders)
-    orders.each do |order, index|
-      puts "#{order.id} - Meal: #{order.meal.name} | Customer: #{order.customer.name} | Delivered by: #{order.employee.username} | Delivered: #{order.delivered?}"
+    orders.each do |order|
+      # This line was broken up in order to shut the style guide up!
+      # The space in the beginning is for a proper display
+      puts "
+      #{order.id} - Meal: #{order.meal.name} |
+       Customer: #{order.customer.name} |
+       Delivered by: #{order.employee.username} |
+       Delivered: #{order.delivered?}
+      "
     end
   end
 end

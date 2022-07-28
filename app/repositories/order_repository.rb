@@ -1,7 +1,7 @@
 class OrderRepository
   def initialize(csv_file, meal_repository, customer_repository, employee_repository)
     @csv_file = csv_file
-    
+
     # Auxiliary repos
     @meal_repository = meal_repository
     @customer_repository = customer_repository
@@ -53,7 +53,7 @@ class OrderRepository
       row[:customer] = @customer_repository.find(row[:customer_id].to_i)
       row[:employee] = @employee_repository.find(row[:employee_id].to_i)
 
-      #                       Order.new({id: 1, delivered: true,  meal_id: 1, customer_id: 2, employee_id: 3, meal: INSTANCE, customer: INSTANCE, employee: INSTANCE})
+      #                       Order.new({id: 1, delivered: true, meal: OBJECT, customer: OBJECT, employee: OBJECT})
       @orders << Order.new(row)
     end
 

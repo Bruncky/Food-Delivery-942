@@ -53,8 +53,7 @@ class OrdersController
 
     meal_id = @orders_view.ask_user_for(:meal_id)
 
-    meals[meal_id.to_i]
-    # @meal_repository.find(meal_id)
+    @meal_repository.find(meal_id.to_i)
   end
 
   def find_customer
@@ -66,8 +65,7 @@ class OrdersController
 
     customer_id = @orders_view.ask_user_for(:customer_id)
 
-    # customers[customer_id.to_i]
-    @customer_repository.find(customer_id)
+    @customer_repository.find(customer_id.to_i)
   end
 
   def find_employee
@@ -79,8 +77,7 @@ class OrdersController
 
     employee_id = @orders_view.ask_user_for(:employee_id)
 
-    employees[employee_id.to_i]
-    # @employee_repository.find(employee_id)
+    @employee_repository.find(employee_id.to_i)
   end
 
   def list_my_undelivered_orders(current_user)

@@ -17,6 +17,8 @@ class OrdersController
     employee = find_employee
 
     order = Order.new(meal: meal, customer: customer, employee: employee)
+
+    @order_repository.create(order)
   end
 
   def list_undelivered_orders

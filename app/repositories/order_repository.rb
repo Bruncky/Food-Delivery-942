@@ -27,7 +27,11 @@ class OrderRepository
   end
 
   def my_undelivered_orders(current_user)
-    @orders.reject { |order| order.delivered? && order.employee.username != current_user.username }
+    # For some reason, the old version we had below didn't work because of &&,
+    # so I just called the method above with already gets undelivered orders
+
+    # OLD: undelivered_orders.reject { |order| order.delivered? && order.employee.username != current_user.username }
+    undelivered_orders.reject { |order| order.employee.username != current_user.username }
   end
 
   # def mark_as_delivered(order)

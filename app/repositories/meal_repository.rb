@@ -48,6 +48,7 @@ class MealRepository
       row[:id] = row[:id].to_i
       row[:price] = row[:price].to_i
 
+      #                      Meal.new(id: 1, name: 'chocolate cake', price: 2)
       @meals << Meal.new(row)
     end
 

@@ -1,19 +1,20 @@
 class Router
-  def initialize(meals_controller, customers_controller, sessions_controller)
+  def initialize(meals_controller, customers_controller, sessions_controller, orders_controller)
     @meals_controller = meals_controller
     @customers_controller = customers_controller
     @sessions_controller = sessions_controller
+    @orders_controller = orders_controller
 
     @running = true
   end
 
   def run
-    employee = @sessions_controller.sign_in
+    @current_user = @sessions_controller.sign_in
 
     while @running
-      # Check employee's role
+      # Check current_user's role
       # Print manager menu OR rider menu
-      if employee.manager?
+      if @current_user.manager?
         print_manager_menu
 
         choice = gets.chomp.to_i

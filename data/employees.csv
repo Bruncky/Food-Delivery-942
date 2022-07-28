@@ -1,3 +1,4 @@
 id,username,password,role
 1,bruncky,secret,manager
 2,alice,secret,rider
+3,maria,secret,rider
